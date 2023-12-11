@@ -4,6 +4,9 @@ pipeline{
         stage("for terraform){
             steps{
                 sh "var/lib/jenkins/workspace/$(JOB_NAME)/main.tf
+                sh "terraform init"
+                sh "terraform validate"
+                sh "terraform apply"
             }
         }
     }
